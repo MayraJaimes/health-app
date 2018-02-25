@@ -2,6 +2,7 @@ DROP TABLE users;
 DROP TABLE userInfo;
 
 DROP DATABASE health;
+
 CREATE DATABASE health;
 USE health;
 
@@ -29,7 +30,6 @@ INSERT INTO users (user_fname, user_lname)
             ("Madison", "Huh"),
             ("Vanessa", "Jaimes");
 
-
 INSERT INTO userInfo (user_id, run_date, total_miles, total_min, calorie_intake)
     VALUES (1, "2018-01-03", 5, 310, 1000),
             (1, "2018-01-05", 3, 150, 1300),
@@ -48,20 +48,13 @@ SELECT total_miles/(total_min/60) AS mile_per_hour
 FROM userInfo;
 
 SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM userInfo;
+FROM userInfo ORDER BY mile_per_hour LIMIT 5;
 
+SELECT total_miles/(total_min/60) AS mile_per_hour 
+FROM userInfo ORDER BY mile_per_hour DESC LIMIT 5;
 
+SELECT total_miles/(total_min/60) AS mile_per_hour 
+FROM userInfo ORDER BY mile_per_hour LIMIT 1;
 
-
-
-SELECT column-name, column-name FROM tablename 
-ORDER BY column-name DESC LIMIT 5;
-
-SELECT (total_min/60) / total_miles AS mile_per_hour) 
-FROM userInfo;
-
-(total_min/60) / total_miles AS mile_per_hour
-
-//average calories
-
-//
+SELECT total_miles/(total_min/60) AS mile_per_hour 
+FROM userInfo ORDER BY mile_per_hour DESC LIMIT 1;
