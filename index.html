@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <title>Health App</title>
 </head>
 <body>
 
@@ -13,28 +14,54 @@
     <h2>Member:</h2>
     <form>
         First Name: <br>
-        <input type="text" name="firstname" placeholder="First Name"><br>
+        <input type="text" id="firstname" name="firstname" placeholder="First Name"><br>
         Last name:<br>
-        <input type="text" name="lastname" placeholder="Last Name"><br>
+        <input type="text" id="lastname" name="lastname" placeholder="Last Name"><br>
     </form>
     
     <h3>Run Information:</h3>
     <form>
         Run Date: Format <br>
-        <input type="date" name="date"><br>
+        <input type="date" id="date" name="date"><br>
         Total Miles:<br>
-        <input type="number" name="miles" placeholder="Miles"><br>
+        <input type="number" id="miles" name="miles" placeholder="Miles"><br>
         Total Minutes:<br>
-        <input type="number" name="minutes" placeholder="Minutes"><br>
+        <input type="number" id="minutes" name="minutes" placeholder="Minutes"><br>
     </form>
     
     <h3>Nutrition Information:</h3>
     <form>
         Total calories today:<br>
-        <input type="number" name="calories" placeholder="calories"><br>
+        <input type="number" id="calories" name="calories" placeholder="calories"><br>
     </form>
 
-    <input type="submit" value="Submit">
+    <button id="submit" type="button">Submit</button>
 
+
+    <script type="text/javascript">
+    
+        $("#submit").on("click", function(event) {
+            event.preventDefault();
+        
+            var newEntry = {
+                firstName: $("#firstname").val().trim(),
+                lastName: $("#lastname").val().trim(),
+                date: $("#date").val().trim(),
+                miles: $("#miles").val().trim(),
+                minutes: $("#minutes").val().trim(),
+                calories: $("#calories").val().trim()
+            };
+        
+            console.log(newEntry);
+
+            $("#firstname").val("");
+            $("#lastname").val("");
+            $("#date").val("");
+            $("#miles").val("");
+            $("#minutes").val("");
+            $("#calories").val("");
+        });
+    
+    </script>
 </body>
 </html>
