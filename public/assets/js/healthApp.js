@@ -1,9 +1,9 @@
-$("#submit").on("click", function(event) {
+
+  $(function() {
+
+  
+  $(".create-form").on("submit", function(event) {
     event.preventDefault();
-
-    console.log("hello");
-
-    var entriesForUser;
 
     var newEntry = {
         firstName: $("#firstname").val().trim(),
@@ -14,34 +14,25 @@ $("#submit").on("click", function(event) {
         calories: $("#calories").val().trim()
     };
 
-    // console.log(newEntry);
-
-    $.post("/api", newEntry,
-    function(data) {
-        console.log(data);
-
-    $("#firstname").val("");
-    $("#lastname").val("");
-    $("#date").val("");
-    $("#miles").val("");
-    $("#minutes").val("");
-    $("#calories").val("");
-
-    })
+    $.ajax("/api/health", {
+      type: "POST",
+      data: newEntry
+    }).then(
+      function() {
+        console.log("created new entry");
+        location.reload();
+      }
+    );
+  });
 
 });
-var currentURL = window.location.origin;
 
-function runQuery() {
+// $("#submit").on("click", function(event) {
 
-$.ajax({ url: currentURL + "/api", method: "GET" })
-  .then(function(entries) { 
 
-    console.log("URL: " + currentURL + "/api");
-    console.log(entries);
-
-  }
-);
-}
-
-runQuery();
+    // $("#firstname").val("");
+    // $("#lastname").val("");
+    // $("#date").val("");
+    // $("#miles").val("");
+    // $("#minutes").val("");
+    // $("#calories").val("");

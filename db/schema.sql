@@ -1,9 +1,9 @@
-DROP TABLE users;
-DROP TABLE userInfo;
+DROP TABLE health;
+DROP TABLE health;
 
-DROP DATABASE health;
+DROP DATABASE health_app;
 
-CREATE DATABASE health;
+CREATE DATABASE health_app;
 USE health;
 
 CREATE TABLE users (
@@ -13,7 +13,7 @@ CREATE TABLE users (
     PRIMARY KEY (user_id)
 );
 
-CREATE TABLE userInfo (
+CREATE TABLE health (
     event_id INT(100) AUTO_INCREMENT,
     user_id INT(100) NOT NULL,
     run_date DATE,
@@ -29,19 +29,19 @@ LEFT JOIN userInfo
 ON userInfo.user_id = users.user_id;
 
 SELECT AVG(calorie_intake) 
-FROM userInfo;
+FROM health;
 
 SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM userInfo;
+FROM health;
 
 SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM userInfo ORDER BY mile_per_hour LIMIT 5;
+FROM health ORDER BY mile_per_hour LIMIT 5;
 
 SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM userInfo ORDER BY mile_per_hour DESC LIMIT 5;
+FROM health ORDER BY mile_per_hour DESC LIMIT 5;
 
 SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM userInfo ORDER BY mile_per_hour LIMIT 1;
+FROM health ORDER BY mile_per_hour LIMIT 1;
 
 SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM userInfo ORDER BY mile_per_hour DESC LIMIT 1;
+FROM health ORDER BY mile_per_hour DESC LIMIT 1;
