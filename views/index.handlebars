@@ -25,6 +25,30 @@
 
 <hr>
 
+<table>
+  <tr>
+    <th>Event ID</th>
+    <th>Run Date</th> 
+    <th>Total Miles</th>
+    <th>Total Minutes</th>
+    <th>Total Calories</th>
+  </tr>
+    {{#each health}}
+        <tr>
+            <td>{{this.event_id}}</td>
+            <td>{{this.run_date}}
+</td> 
+            <td>{{this.total_miles}} </td>
+            <td>{{this.total_min}} </td>
+            <td>{{this.calorie_intake}} </td>
+        </tr>
+    {{/each}}
+</table>
+
+
+
+{{!-- <hr>
+
 <div>
     <button>Average Calories</button>
 
@@ -33,5 +57,5 @@
 
     <button>Slowest Run</button>
     <button>Slowest 5 Runs</button>
-</div>
+</div> --}}
     

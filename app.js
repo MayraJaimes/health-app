@@ -21,28 +21,3 @@ app.use(routes);
 app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT);
 });
-
-// var entries = ["hello"];
-
-// app.get("/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "index.html"));
-// });
-
-// app.get("/api", function(req, res) {
-//     var info = req.params.entries;
-//     // console.log(info);
-//     return res.json(entries);
-// });
-
-// app.post("/api", function(req, res) {
-//     var newentry = req.body;
-//     newentry.routeName = newentry.firstName.replace(/\s+/g, "").toLowerCase();
-//     console.log(newentry);
-//     entries.push(newentry);
-//     console.log(entries);
-//     res.json(newentry);
-//   });
-
-
-
-
