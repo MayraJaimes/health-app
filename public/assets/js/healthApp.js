@@ -21,4 +21,19 @@
     );
   });
 
+  $(".delEntry").on("click", function(event) {
+    event.preventDefault();
+    
+    var id = $(this).data("id");
+
+    $.ajax("/api/health/" + id, {
+      type: "DELETE",
+      data: id
+    }).then(
+      function() {
+        location.reload();
+      }
+    );
+  });
+
 });

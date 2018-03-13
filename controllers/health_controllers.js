@@ -37,7 +37,7 @@ router.put("/api/health/:id", function(req, res) {
 });
 
 router.delete("/api/health/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+  var condition = "event_id = " + req.params.id;
 
   health.delete(condition, function(result) {
     if (result.affectedRows == 0) {

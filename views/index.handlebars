@@ -27,23 +27,26 @@
 
 <table>
   <tr>
-    <th>Event ID</th>
     <th>Run Date</th> 
     <th>Total Miles</th>
     <th>Total Minutes</th>
     <th>Total Calories</th>
+    <th>Delete</th>
+
   </tr>
     {{#each health}}
         <tr>
-            <td>{{this.event_id}}</td>
-            <td>{{this.run_date}}
-</td> 
+            <td>{{this.run_date}}</td> 
             <td>{{this.total_miles}} </td>
             <td>{{this.total_min}} </td>
             <td>{{this.calorie_intake}} </td>
+            <td><button data-id="{{this.event_id}}" class="delEntry">Delete Entry</button></td>
         </tr>
     {{/each}}
 </table>
+
+
+
 
 
 
