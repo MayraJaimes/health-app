@@ -16,7 +16,7 @@ router.post("/api/health", function(req, res) {
     health.create([
     "run_date", "total_miles", "total_min", "calorie_intake"
   ], [
-    req.body.date, req.body.miles, req.body.min, req.body.calories,
+    req.body.date, req.body.miles, req.body.minutes, req.body.calories,
   ], function(result) {
     res.json({ id: result.insertId });
   });

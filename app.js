@@ -14,11 +14,11 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/health_controller.js");
+var routes = require("./controllers/health_controllers.js");
 
 app.use(routes);
 
-app.listen(port, function() {
+app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT);
 });
 
