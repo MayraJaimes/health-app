@@ -20,9 +20,11 @@ router.get("/:id", function(req, res) {
   });
 });
 
-router.get("/information/:info", function(req, res) {
-  var condition = "total_miles = " + req.params.info;
-  health.selectOne(condition, function(data) {
+router.get("/information/:order/:limit", function(req, res) {
+  var order = req.params.order;
+  var limit = req.params.limit;
+
+  health.average(order, limit, function(data) {
     var hbsObject = {
       health: data
     };

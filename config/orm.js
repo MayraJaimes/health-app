@@ -90,6 +90,22 @@ var orm = {
       cb(result);
     });
   },
+
+  average: function(table, order, limit, cb) {
+    var queryString = "SELECT run_date, total_miles, total_min, calorie_intake, total_miles/(total_min/60) AS mile_per_hour FROM " + table;
+    queryString += " ORDER BY mile_per_hour ";
+    queryString += order + " LIMIT ";
+    queryString += limit;
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+
 };
 
 module.exports = orm;

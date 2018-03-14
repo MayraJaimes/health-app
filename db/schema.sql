@@ -31,22 +31,11 @@ ON userInfo.user_id = users.user_id;
 SELECT AVG(calorie_intake) 
 FROM entries;
 
-SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM entries;
+SELECT total_miles/(total_min/60) AS mile_per_hour FROM entries;
 
+SELECT total_miles/(total_min/60) AS mile_per_hour FROM entries ORDER BY mile_per_hour ASC LIMIT 5;
+SELECT total_miles/(total_min/60) AS mile_per_hour FROM entries ORDER BY mile_per_hour DESC LIMIT 5;
+SELECT total_miles/(total_min/60) AS mile_per_hour FROM entries ORDER BY mile_per_hour LIMIT 1;
+SELECT total_miles/(total_min/60) AS mile_per_hour FROM entries ORDER BY mile_per_hour DESC LIMIT 1;
 
-
-SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM entries ORDER BY mile_per_hour LIMIT 5;
-
-
-SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM entries ORDER BY mile_per_hour DESC LIMIT 5;
-
-
-
-SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM entries ORDER BY mile_per_hour LIMIT 1;
-
-SELECT total_miles/(total_min/60) AS mile_per_hour 
-FROM entries ORDER BY mile_per_hour DESC LIMIT 1;
+SELECT run_date, total_miles, total_min, calorie_intake, total_miles/(total_min/60) AS mile_per_hour FROM entries ORDER BY mile_per_hour DESC LIMIT 5;

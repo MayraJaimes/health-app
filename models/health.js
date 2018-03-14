@@ -27,6 +27,12 @@ var health = {
     orm.delete("entries", condition, function(res) {
       cb(res);
     });
+  },
+
+  average: function(order, limit, cb) {
+    orm.average("entries", order, limit, function(res){
+      cb(res);
+    });
   }
 };
 
