@@ -20,6 +20,17 @@ router.get("/:id", function(req, res) {
   });
 });
 
+router.get("/information/:info", function(req, res) {
+  var condition = "total_miles = " + req.params.info;
+  health.selectOne(condition, function(data) {
+    var hbsObject = {
+      health: data
+    };
+    console.log(hbsObject);
+    res.render("information", hbsObject);
+  });
+});
+
 router.post("/api/health", function(req, res) {
     health.create([
     "run_date", "total_miles", "total_min", "calorie_intake"
@@ -32,7 +43,6 @@ router.post("/api/health", function(req, res) {
 
 router.put("/api/health/:id", function(req, res) {
   var condition = "event_id = " + req.params.id;
-
   health.update({total_miles: req.body.miles, total_min: req.body.minutes, calorie_intake: req.body.calories}
   , condition, function(result) {
     if (result.changedRows == 0) {
@@ -42,13 +52,6 @@ router.put("/api/health/:id", function(req, res) {
     }
   });
 });
-
-
-
-    // {"run_date": req.body.date},
-    // {"total_miles": req.body.miles})
-    // {"total_min": req.body.minutes})
-    // {"calorie_intake": req.body.calories})
 
 router.delete("/api/health/:id", function(req, res) {
   var condition = "event_id = " + req.params.id;

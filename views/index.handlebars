@@ -1,12 +1,6 @@
 <h1>Health App</h1>
 
 <form class="create-form">
-    <h2>Member:</h2>
-    First Name: <br>
-    <input type="text" id="firstname" name="firstname" placeholder="First Name"><br>
-    Last name:<br>
-    <input type="text" id="lastname" name="lastname" placeholder="Last Name"><br>
-
     <h3>Run Information:</h3>
     Run Date: Format <br>
     <input type="date" id="date" name="date"><br>
@@ -47,16 +41,13 @@
     {{/each}}
 </table>
 
-
-{{!-- <hr>
+<hr>
 
 <div>
-    <button>Average Calories</button>
-
-    <button>Fastest Run</button>
-    <button>Fastest 5 Runs</button>
-
-    <button>Slowest Run</button>
-    <button>Slowest 5 Runs</button>
-</div> --}}
+    <button class="avg">Average Calories</button>
+    <button class="fast">Fastest Run</button>
+    <a href="information/10"><button class="topFast">Fastest 5 Runs</button></a>
+    <button class="slow">Slowest Run</button>
+    <button class="topSlow">Slowest 5 Runs</button>
+</div>
     

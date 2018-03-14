@@ -1,0 +1,14 @@
+<h1>Information Page</h1>
+
+<ol>
+        {{#each health}}
+    <li> 
+        <p>Date: {{this.run_date}}</p> 
+        <p>Total Miles: {{this.total_miles}}</p> 
+        <p>Total Minute: {{this.total_min}}</p> 
+        <p>Total Calories: {{this.calorie_intake}}</p> 
+    </li>
+        {{/each}}
+</ol>
+
+
