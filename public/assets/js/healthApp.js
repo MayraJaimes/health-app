@@ -36,4 +36,26 @@
     );
   });
 
+  $(".update-form").on("submit", function(event) {
+    event.preventDefault();
+
+    var updatedEntry = {
+      date: $("#date").val().trim(),
+      miles: $("#miles").val().trim(),
+      minutes: $("#minutes").val().trim(),
+      calories: $("#calories").val().trim()
+    };
+
+    var id = $(this).data("id");
+
+    $.ajax("/api/health/" + id, {
+      type: "PUT",
+      data: updatedEntry
+    }).then(
+      function() {
+        location.assign("/");
+      }
+    );
+  });
+
 });

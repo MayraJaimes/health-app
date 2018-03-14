@@ -1,0 +1,32 @@
+<h1>Update the run information with an id of {{this.event_id}}</h1>
+
+<form data-id="{{this.event_id}}" class="update-form">
+
+  <h3>Run Information:</h3>
+
+  <div class="form-group">
+    <label for="date">Run Date:</label>
+    <input type="date" id="date" name="date" value="{{this.run_date}}">
+  </div>
+
+  <div class="form-group">
+    <label for="miles">Total Miles:</label>
+    <textarea type="number" id="miles" name="miles" rows="1" cols="20">{{this.total_miles}}</textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="minutes">Total Minutes:</label>
+    <textarea type="number" id="minutes" name="minutes" rows="1" cols="20">{{this.total_min}}</textarea>
+  </div>
+
+  <h3>Nutrition Information:</h3>
+
+  <div class="form-group">
+    <label for="calories">Total Calorie Intake:</label>
+    <textarea type="number" id="calories" name="calories" rows="1" cols="20">{{this.calorie_intake}}</textarea>
+  </div>
+
+  <input id="submit" type="submit">
+  <br>
+  
+</form>

@@ -32,6 +32,19 @@ var orm = {
       cb(result);
     });
   },
+
+  selectOne: function(table, condition, cb) {
+    var queryString = "SELECT * FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
     queryString += " (";

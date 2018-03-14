@@ -32,6 +32,7 @@
     <th>Total Minutes</th>
     <th>Total Calories</th>
     <th>Delete</th>
+    <th>Update</th>
 
   </tr>
     {{#each health}}
@@ -41,13 +42,10 @@
             <td>{{this.total_min}} </td>
             <td>{{this.calorie_intake}} </td>
             <td><button data-id="{{this.event_id}}" class="delEntry">Delete Entry</button></td>
+            <td> <a href="/{{this.event_id}}">Update Entry</a> </td>
         </tr>
     {{/each}}
 </table>
-
-
-
-
 
 
 {{!-- <hr>

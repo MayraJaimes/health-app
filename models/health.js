@@ -6,6 +6,13 @@ var health = {
       cb(res);
     });
   },
+
+  selectOne: function(condition, cb) {
+    orm.selectOne("entries", condition, function(res){
+      cb(res);
+    });
+  },
+
   create: function(cols, vals, cb) {
     orm.create("entries", cols, vals, function(res) {
       cb(res);
