@@ -1,7 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: cover;
+    font-size: 1.2em;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+}
+
+h1 {
+    color: white;
+}
+
+.header {
+    margin: 20px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: green;
+    font-size: 2em;
+}
+
+.header >div {
+    justify-self: center;
+}
+
+
 table {
     text-align: center;
 }
 
-td {
-    border: 1px black solid;
+th {
+    margin: 50px;
+}
+
+.addSection {
+    /* background-image: url(../img/background.png); */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #00939a;
+    margin: 20px 20px;
+
+}
+
+.addSection >div {
+    padding: 20px;
+}
+
+.displaySection {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #f0b100;
+    margin: 20px 20px;
+}
+
+.displaySection >div {
+    justify-self: center;
+    padding: 20px;
+}
+
+.buttonsSection {
+    margin: 10px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #fe4f7d;
+    padding: 20px 0;
+}
+
+.buttonsSection >div {
+    justify-self: center;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.buttons button {
+    background-color: white;
+    width: 100%;
 }

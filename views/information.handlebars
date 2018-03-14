@@ -3,11 +3,11 @@
 <ol>
     {{#each health}}
     <li> 
-        <p>Date: {{this.run_date}}</p> 
-        <p>Total Miles: {{this.total_miles}}</p> 
-        <p>Total Minute: {{this.total_min}}</p> 
-        <p>Total Calories: {{this.calorie_intake}}</p> 
-        <p>Miles per Hour: {{this.mile_per_hour}}</p> 
+        <p>{{this.run_date}}</p> 
+        <p>{{this.mile_per_hour}} miles/hour</p> 
+        <p>{{this.total_miles}} miles</p> 
+        <p>{{this.total_min}} minutes</p> 
+        <p>{{this.calorie_intake}} calories</p> 
     </li>
     {{/each}}
 </ol>

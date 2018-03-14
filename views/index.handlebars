@@ -1,51 +1,89 @@
-<h1>Health App</h1>
-
-<form class="create-form">
-    <h3>Run Information:</h3>
-    Run Date: Format <br>
-    <input type="date" id="date" name="date"><br>
-    Total Miles:<br>
-    <input type="number" id="miles" name="miles" placeholder="Miles"><br>
-    Total Minutes:<br>
-    <input type="number" id="minutes" name="minutes" placeholder="Minutes"><br>
-    
-    <h3>Nutrition Information:</h3>
-    Total calories today:<br>
-    <input type="number" id="calories" name="calories" placeholder="calories"><br>
-
-    <input id="submit" type="submit"><br>
-
-</form>
-
-<hr>
-
-<table>
-  <tr>
-    <th>Run Date</th> 
-    <th>Total Miles</th>
-    <th>Total Minutes</th>
-    <th>Total Calories</th>
-
-  </tr>
-    {{#each health}}
-        <tr>
-            <td>{{this.run_date}}</td> 
-            <td>{{this.total_miles}} </td>
-            <td>{{this.total_min}} </td>
-            <td>{{this.calorie_intake}} </td>
-            <td><button data-id="{{this.event_id}}" class="delEntry">Delete</button></td>
-            <td> <a href="/{{this.event_id}}"><button class="fast">Update</button></a> </td>
-        </tr>
-    {{/each}}
-</table>
-
-<hr>
-
-<div>
-    <button class="avg">Average Calories</button>
-    <a href="information/DESC/1"><button class="fast">Fastest Run</button></a>
-    <a href="information/DESC/5"><button class="topFast">Fastest 5 Runs</button></a>
-    <a href="information/ASC/1"><button class="slow">Slowest Run</button></a>
-    <a href="information/ASC/5"><button class="topSlow">Slowest 5 Runs</button></a>
+<div class="header">
+   <div>
+        <h1>Running Application</h1>
+   </div> 
 </div>
+
+<div class="addSection">
+    <div>
+    <form class="create-form">
+        <h2>Input Your Information</h2>
+        <h3>Run:</h3>
+        Run Date: Format <br>
+        <input type="date" id="date" name="date"><br>
+        Total Miles:<br>
+        <input type="number" id="miles" name="miles" placeholder="Miles"><br>
+        Total Minutes:<br>
+        <input type="number" id="minutes" name="minutes" placeholder="Minutes"><br>
+        
+        <h3>Nutrition:</h3>
+        Total calories today:<br>
+        <input type="number" id="calories" name="calories" placeholder="calories"><br>
+        <br>
+        <input id="submit" type="submit"><br>
+    </form>
+    </div>
+
+    <div>
+        <img src="assets/img/background.png" alt="yoga">
+    </div>
+
+</div>
+
+<div class="displaySection">
+    <div>
+    <table>
+    <tr>
+        <th>Run Date</th> 
+        <th>Total Miles</th>
+        <th>Total Minutes</th>
+        <th>Total Calories</th>
+
+    </tr>
+        {{#each health}}
+            <tr>
+                <td>{{this.run_date}}</td> 
+                <td>{{this.total_miles}} </td>
+                <td>{{this.total_min}} </td>
+                <td>{{this.calorie_intake}} </td>
+                <td><button data-id="{{this.event_id}}" class="delEntry">Delete</button></td>
+                <td> <a href="/{{this.event_id}}"><button class="fast">Update</button></a> </td>
+            </tr>
+        {{/each}}
+    </table>
+    </div>
+
+</div>
+
+<div class="buttonsSection">
+    <div>
+    <h2>Averages</h2>
+    <p>Find more information by clicking the buttons below.</p>
+    </div>
+
+    <div class="buttons">
+        <div>
+            <button class="avg">Average Calories</button>
+        </div>
+
+        <div>
+            <a href="information/DESC/1"><button class="fast">Fastest Run</button></a>
+        </div>
+
+        <div>
+            <a href="information/DESC/5"><button class="topFast">Fastest 5 Runs</button></a>
+        </div>
+
+        <div>
+            <a href="information/ASC/1"><button class="slow">Slowest Run</button></a>
+        </div>
+
+        <div>
+            <a href="information/ASC/5"><button class="topSlow">Slowest 5 Runs</button></a>
+        </div>
+    </div>
+</div>
+
+   
+
     
